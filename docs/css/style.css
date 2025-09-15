@@ -1,0 +1,149 @@
+/* GERAL */
+:root {
+    --primary-color: #00aaff;
+    --secondary-color: #0077cc;
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --card-bg: #2a2a2a;
+    --border-color: #444;
+}
+
+[data-theme="light"] {
+    --primary-color: #0077cc;
+    --secondary-color: #0055aa;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f0f0f0;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+header {
+    background-color: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.theme-btn, .menu-hamburger {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.menu-hamburger {
+    display: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* Essencial para conter o globo */
+    overflow: hidden;   /* Garante que nada do globo vaze para fora */
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ESTILOS ADICIONAIS PARA INTEGRAR O GLOBO */
+#globe-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Coloca o globo no fundo */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo do hero fique na frente do globo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    color: #fff; /* Garante que o texto seja legível sobre o fundo escuro do globo */
+    background: rgba(0,0,0,0.1); /* Opcional: leve escurecimento para melhorar contraste */
+    padding: 20px;
+}
